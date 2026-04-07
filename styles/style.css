@@ -1,5 +1,211 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* Main styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: 'IBM Plex mono', sans-serif;
+  background-image: var(--cover-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+}
+
+.title-decor {
+  align-self: center;
+  color: var(--title-decor-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: 0;
+  background-color: var(--accent-color);
+}
+
+/* Header */
+
+.header {
+  background-color: var(--bg-color);
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 10px;
+  min-block-size: 648px;
+}
+
+.header__decoration-text-dark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  justify-self: end;
+  padding-right: 30px;
+  color: var(--accent-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.header__decoration-text-dark::after {
+  content: '';
+  position: absolute;
+  top: 13px;
+  right: 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
+  transform: translateY(-50%);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.header__theme-menu-item {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+
+.header__theme-menu-button {
+  height: 26px;
+  border: 1px solid transparent;
+  padding: 1.5px 15px;
+  color: var(--accent-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  background: none;
+}
+
+.header__theme-menu-button:active {
+  border: 1px solid var(--accent-color);
+}
+
+.header__text {
+  color: var(--header-text-color);
+  font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  letter-spacing: 0;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__title {
+  max-width: 355px;
+}
+
+/* Main */
+
+.main {
+  padding: 40px 10px 40px;
+  background-color: var(--title-decor-color);
+}
+
+.main__section:not(:last-of-type) {
+  margin-bottom: 50px;
+}
+
+.section__header {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: 0;
+  padding-bottom: 20px;
+}
+
+.section__paragraph-header {
+  margin-bottom: 10px;
+}
+
+.section__paragraph {
+  color: var(--text-color);
+  padding-bottom: 20px;
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: 0;
+}
+
+.paragraph__link {
+  text-decoration: none;
+  color: var(--text-color);
+  text-shadow: 2px 1px 0 var(--accent-color);
+}
+
+.section__paragraph-accent-margin {
+  margin-bottom: 20px;
+}
+
+.title-decor-normal {
+  font-weight: normal;
+}
+
+.section__image {
+  width: 100%;
+  height: auto;
+}
+
+.section__image:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+
+.footer {
+  display: grid;
+  background-color: var(--title-decor-color);
+  min-block-size: 648px;
+}
+
+.footer__header-text {
+  justify-self: center;
+  align-self: center;
+}
+
+/* Media 768x1024 */
+
