@@ -24,8 +24,8 @@
   right: 10px;
   width: 25px;
   height: 25px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: var(--border-default);
+  border-right: var(--border-default);
 }
 
 .decorated-zone::after {
@@ -35,15 +35,15 @@
   left: 10px;
   width: 25px;
   height: 25px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: var(--border-default);
+  border-left: var(--border-default);
 }
 
 .title-decor {
   align-self: center;
   color: var(--title-decor-color);
   font-weight: 700;
-  font-size: 18px;
+  font-size: var(--font-size-default);
   line-height: 23.4px;
   letter-spacing: 0;
   background-color: var(--accent-color);
@@ -52,12 +52,12 @@
 /* Header */
 
 .header {
-  background-color: var(--bg-color);
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   box-sizing: border-box;
   height: 100vh;
   padding: 10px;
+  background-color: var(--bg-color);
   min-block-size: 648px;
 }
 
@@ -69,7 +69,7 @@
   padding-right: 30px;
   color: var(--accent-color);
   font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-size-default);
   line-height: 25px;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -103,7 +103,7 @@
 
 .header__theme-menu-item {
   font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-size-default);
   line-height: 18px;
   letter-spacing: 0;
   text-transform: lowercase;
@@ -115,15 +115,26 @@
   padding: 1.5px 15px;
   color: var(--accent-color);
   font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-size-default);
   line-height: 18px;
   letter-spacing: 0;
   text-transform: lowercase;
   background: none;
+  cursor: pointer;
 }
 
-.header__theme-menu-button:active {
-  border: 1px solid var(--accent-color);
+.header__theme-menu-button_active {
+  border: var(--border-default);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+  border: 1px solid var(--hover-btn-color);
+}
+
+.header__theme-menu-button:focus-visible:not(.header__theme-menu-button_active) {
+  border-bottom: var(--border-default);
+  outline: none;
 }
 
 .header__text {
@@ -139,45 +150,54 @@
   max-width: 355px;
 }
 
-/* Main */
+/* Main content */
 
 .main {
-  padding: 40px 10px 40px;
+  padding: 40px 10px;
   background-color: var(--title-decor-color);
 }
 
 .main__section:not(:last-of-type) {
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 
 .section__header {
+  padding-bottom: 20px;
   color: var(--accent-color);
   font-weight: 700;
-  font-size: 18px;
+  font-size: var(--font-size-default);
   line-height: 23.4px;
   letter-spacing: 0;
-  padding-bottom: 20px;
 }
 
-.section__paragraph-header {
+.content__header {
   margin-bottom: 10px;
 }
 
-.section__paragraph {
-  color: var(--text-color);
+.content__paragraph {
   padding-bottom: 20px;
-  font-size: 18px;
+  color: var(--text-color);
+  font-size: var(--font-size-default);
   line-height: 23.4px;
   letter-spacing: 0;
 }
 
 .paragraph__link {
-  text-decoration: none;
   color: var(--text-color);
+  text-decoration: none;
   text-shadow: 2px 1px 0 var(--accent-color);
 }
 
-.section__paragraph-accent-margin {
+.paragraph__link:hover {
+  border-bottom: var(--border-default);
+}
+
+.paragraph__link:focus-visible {
+  border: var(--border-default);
+  outline: none;
+}
+
+.content__header-decoration {
   margin-bottom: 20px;
 }
 
@@ -186,8 +206,10 @@
 }
 
 .section__image {
+  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .section__image:not(:last-of-type) {
@@ -208,4 +230,146 @@
 }
 
 /* Media 768x1024 */
+
+@media (width > 767px) {
+
+  .main {
+    padding: 60px 20px;
+  }
+
+  /* Header */
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .title-decor {
+    grid-column: span 1;
+    justify-self: end;
+    width: 50%;
+  }
+
+  .header {
+    padding: 20px;
+  }
+
+  .header__decoration-text-dark {
+    top: 20px;
+    right: 20px;
+  }
+
+  .header__text {
+    margin-left: -20px;
+  }
+
+  .header__title {
+    max-width: none;
+  }
+
+  /* Main */
+
+  .main__section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .main__section:last-of-type {
+    grid-template-rows: 1fr min-content min-content min-content;
+  }
+
+  .content__header {
+    width: 100%;
+  }
+
+  .section__why-it-is-hard-to-concentrate .section__header {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+  }
+
+  .section__why-it-is-hard-to-concentrate .section__content {
+    grid-column: 2 / 4;
+    grid-row: 1 / 4;
+  }
+
+  .section__what-reduces-concentration {
+    grid-template-rows: min-content 1fr;
+  }
+
+  .section__what-reduces-concentration .section__header {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding-bottom: 0;
+  }
+
+  .section__what-reduces-concentration .section__content {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+
+  .section__how-to-concentrate .section__header {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+  }
+
+  .section__how-to-concentrate .section__content {
+    grid-column: 2 / 4;
+    grid-row: 1 / 4;
+  }
+
+  .section__picture .content__header {
+    grid-column: 1 / 4;
+  }
+
+  .section__image:nth-of-type(1) {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .section__image:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+  }
+
+  .section__image:nth-of-type(3) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+  }
+
+  .section__image:nth-of-type(4) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .section__image:nth-of-type(5) {
+    grid-column: 2 / 4;
+    grid-row: 4 / 5;
+  }
+}
+
+/* Media 1024x768 */
+
+@media (width > 1023px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+  }
+
+  .section__what-reduces-concentration .section__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
 

@@ -1,13 +1,11 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
-
 :root {
   --cover-image: url(../images/cover-image.png);
-  --bg-color: rgba(0, 7, 48, 0.9);
+  --bg-color: #000730E6;
   --accent-color: #FF0070;
   --header-text-color: #DB00FF;
   --title-decor-color: #000028;
   --text-color: #F1B2CE;
+  --hover-btn-color: #FF007066;
+  --border-default: 1px solid #FF0070;
+  --font-size-default: 18px; 
 }
