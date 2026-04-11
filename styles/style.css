@@ -222,6 +222,7 @@
   display: grid;
   background-color: var(--title-decor-color);
   min-block-size: 648px;
+  height: 100vh;
 }
 
 .footer__header-text {
