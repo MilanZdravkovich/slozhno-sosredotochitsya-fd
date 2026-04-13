@@ -259,10 +259,6 @@
     padding: 20px 20px 0;
   }
 
-  .header__title {
-    justify-self: end;
-  }
-
   .header__decoration-text-dark {
     top: 20px;
     right: 20px;
@@ -275,6 +271,7 @@
 
   .header__title {
     max-width: none;
+    justify-self: end;
   }
 
   /* Main */
