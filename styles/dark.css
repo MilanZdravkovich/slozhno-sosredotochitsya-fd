@@ -2,11 +2,13 @@
   --cover-image: url(../images/cover-image-dark.png);
   --bg-color: #000028;
   --accent-color: #FF0070;
+  --changeable-accent-color: #FF0070;
   --header-text-color: #DB00FF;
   --title-decor-color: #000028;
   --text-color: #F1B2CE;
   --hover-btn-color: #FF007066;
   --border-default: 1px solid #FF0070;
+  --link-border: 1px solid #F1B2CE;
 }
 
 .theme-dark .header__decoration-text-dark {
