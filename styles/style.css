@@ -349,6 +349,7 @@
 
   .section__picture .content__header {
     grid-column: 1 / 4;
+    margin-bottom: 0;
   }
 
   .section__image:nth-of-type(1) {
@@ -374,10 +375,6 @@
   .section__image:nth-of-type(5) {
     grid-column: 2 / 4;
     grid-row: 4 / 5;
-  }
-
-  .section__picture .content__header {
-    margin-bottom: 0;
   }
 
   .section__image:not(:last-of-type) {
@@ -422,5 +419,5 @@
   .section__how-to-concentrate .section__content {
     grid-column: 2 / 4;
     grid-row: 1 / 4;
-  } 
+  }
 }
