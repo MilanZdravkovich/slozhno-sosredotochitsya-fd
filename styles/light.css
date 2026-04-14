@@ -6,7 +6,7 @@
   --header-text-color: #ffc2e6;
   --title-decor-color: #353430;
   --text-color: #353430;
-  --hover-btn-color: #353430;
+  --hover-btn-color: #32312D66;
   --border-default: 1px solid #353430;
   --link-border: 1px solid #353430;
 }
@@ -24,7 +24,7 @@
     --header-text-color: #ffc2e6;
     --title-decor-color: #353430;
     --text-color: #353430;
-    --hover-btn-color: #353430;
+    --hover-btn-color: #32312D66;
     --border-default: 1px solid #353430;
     --link-border: 1px solid #353430;
   }
